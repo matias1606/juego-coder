@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño nuevo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body class="cuerpo">
+    <div class="container hojaPrincipal mx-auto">
+        <div class="row justify-content-center indicadores sticky-top">
+            <span class="icon-dollar-coin"></span>
+            <div class="col-3 indicador esquina"><span id="monedas">0</span></div>
+
+            <span class="my-auto icon-corazon"></span>
+            <div class="col indicador medio"><span id="vidas">0</span></div>
+
+            <span class="my-auto icon-patita"></span>
+            <div class="col indicador medio"><span id="comida">0</span></div>
+
+            <span class="my-auto icon-pico"></span>
+            <div class="col-3 indicador esquina"><span id="roca">0</span></div>
+            
+        </div>
+        <h2 id="nombrePersonaje" class="text-center"></h2>    
+        <div class="row hojaPersonaje mx-auto mt-4">
+            <img class="img-fluid rounded mx-auto d-block" src="" alt="">
+        </div>
+
+
+        <div class="row atributosPersonaje mx-auto">
+                <div class="rounded-lg  bg-dark atributos mt-4 mr-2">
+                    <span>salud:</span><span class="atributo" id="salud"> 0</span>
+                </div>
+                <div class="rounded-lg bg-dark atributos mt-4 mr-2">fuerza:<span class="atributo"  id="fuerza"></span></div>
+                <div class="rounded-lg bg-dark atributos mt-4 mr-2">mana:<span class="atributo"  id="mana"></span></div>
+                <div class="rounded-lg bg-dark atributos mt-4 mr-2">agilidad:<span class="atributo" id="agilidad"></span></div>
+                <div class="rounded-lg vel bg-dark atributos mt-4 col-md-8 offset-xl-8">Velocidad:<span class="atributo" id="velocidad"></span></div>
+        </div>
+        <div class="row footer justify-content-center mx-auto fixed-bottom bg-dark">
+            <div id="pelear" class="col border secciones" onclick="window.location.assign('Arena.html')">
+                Pelear    
+                <span class="icon-crossed-swords my-auto"></span>
+            </div>
+
+            <div id="farmear" class="col border secciones modal-btn-farmear">Farmear 
+                <span class="icon-pico my-auto"></span>
+            </div>
+
+            <div class="col border secciones modal-btn-mejoras">Mejoras 
+                <span class="icon-mallet my-auto"></span>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-bg-mejoras">
+            <div class="modal">
+                <div class="tope">
+                    <h2 class="modal-title">MEJORAS</h2>
+                    <span class="modal-close icon-cross"></span>
+                </div>
+                <div class="caja">
+                    <div class="mejora">
+                        <h6 class="nombreMejora">Mejorar Mana </h6>
+                        <p class="descripcion"> mana  actual : <span id="mana-Actual" class="mejoraAtt"></span></p>
+                        <div id="b-mana" class="boton bmejora">Mejorar
+                            <span id="boton1" class="icon-pico icono"> 10 </span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="caja">
+                    <div class="mejora">
+                        <h2 class="nombreMejora">Mejorar Fuerza</h2>
+                        <p class="descripcion"> Fuerza actual : <span id="fuerza-Actual" class="mejoraAtt"></span></p>
+                        <div id="b-fuerza" class="boton bmejora">Mejorar
+                            <span id="boton2" class="icon-patita icono"> 20</span>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="caja">
+                    <div class="mejora">
+                        <h2 class="nombreMejora">Mejorar Agilidad</h2>
+                        <p class="descripcion">Agilidad : <span id="agilidad-Actual" class="mejoraAtt"></span></p>
+                        <div id="b-agilidad" class="boton bmejora">Mejorar
+                            <span id="boton3" class="icon-pico icono"> 20</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="caja">
+                    <div class="mejora">
+                        <h2 class="nombreMejora">Mejorar Salud</h2>
+                        <p class="descripcion">Salud actual : <span id="salud-Actual" class="mejoraAtt"></span></p>
+                        <div id="b-salud" class="boton bmejora">Mejorar
+                            <span id="boton4" class="icon-dollar-coin icono">30</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="caja">
+                    <div class="mejora">
+                        <h2 class="nombreMejora">Mejorar Velocidad</h2>
+                        <p class="descripcion">Velocidad actual : <span id="velocidad-Actual" class="mejoraAtt"></span></p>
+                        <div id="b-velocidad" class="boton bmejora">Mejorar
+                            <span id="boton5" class="icon-dollar-coin icono">20</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <div class="modal-bg-farmear">
+        <div class="modal">
+            <div class="tope">
+                <h2 class="modal-title">FARMEAR</h2>
+                <span class="modal-close icon-cross"></span>
+            </div>
+
+            <div class="caja">
+                <div class="mejora">
+                    <h6 class="nombreMejora">Recolectar comida</h6>
+                    <p class="descripcion">cantidad de recoleccion actual : <span id="comidaActual">20</span> -> <span id="comidaProx" class="verde">25</span></p>
+                    <div id="recComida" class="boton farm">
+                        Farmear
+                        <div id="progresoComida" class="progreso">
+                            <div class="barra"></div>
+                        </div>
+                    </div>
+                    <div id="mejorarComida" class="boton2">Mejorar
+                        <span id="mejoraComidaActual" class="icon-pico icono"> 40 </span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="caja">
+                <div class="mejora">
+                    <h6 class="nombreMejora">Recolectar roca</h6>
+                    <p class="descripcion">cantidad de recoleccion actual: <span id="rocaActual">30</span> -> <span id="rocaProx" class="verde">35</span></p>
+                    <div id="recRoca" class="boton farm">
+                        Farmear
+                        <div id="progresoRoca" class="progreso">
+                            <div class="barra"></div>
+                        </div>
+                    </div>
+                    <div id="mejorarRoca" class="boton2">Mejorar
+                        <span id="mejoraRocaActual" class="icon-patita icono"> 60</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+    <script src="../jquery3.5.1.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script> -->
+    <script src="../js/modales.js"></script>
+    <script src="../js/setearArena.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/AsignarMejoras.js"></script>
+    <script src="../js/player.js"></script>
+    <script src="../js/enemy.js"></script>
+    <!-- <script src="js/usandoApi.js"></script> -->
+</body>
+</html>
